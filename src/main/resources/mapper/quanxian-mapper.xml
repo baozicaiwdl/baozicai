@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.dao.IQuanxianDao">
+<select id="quanxian_list" parameterType="map" resultType="map">
+select * from permission where  permission_name like '%${text}%'  or permission_code like '%{text}%' 
+ limit ${start} ,${limit}
+</select>
+
+<select id="quanxian_list_total" parameterType="map" resultType="int">
+select count(*) from permission where  permission_name like '%${text}%' or permission_code like '%{text}%' 
+</select>
+</mapper>
